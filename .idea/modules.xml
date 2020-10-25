@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ssm-admin.iml" filepath="$PROJECT_DIR$/.idea/ssm-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-admin-common/ssm-admin-common.iml" filepath="$PROJECT_DIR$/ssm-admin-common/ssm-admin-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-admin-dao/ssm-admin-dao.iml" filepath="$PROJECT_DIR$/ssm-admin-dao/ssm-admin-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-admin-service/ssm-admin-service.iml" filepath="$PROJECT_DIR$/ssm-admin-service/ssm-admin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-admin-starter/ssm-admin-starter.iml" filepath="$PROJECT_DIR$/ssm-admin-starter/ssm-admin-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-admin-web/ssm-admin-web.iml" filepath="$PROJECT_DIR$/ssm-admin-web/ssm-admin-web.iml" />
+    </modules>
+  </component>
+</project>
