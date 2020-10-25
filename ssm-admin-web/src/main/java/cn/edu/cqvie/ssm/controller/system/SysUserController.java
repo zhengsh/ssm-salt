@@ -1,5 +1,6 @@
 package cn.edu.cqvie.ssm.controller.system;
 
+import cn.edu.cqvie.ssm.common.dto.IdDto;
 import cn.edu.cqvie.ssm.common.dto.QuerySysUserDto;
 import cn.edu.cqvie.ssm.common.dto.SysUserDto;
 import cn.edu.cqvie.ssm.common.result.CommonResult;
@@ -24,26 +25,26 @@ public class SysUserController {
 
     @PostMapping("/add")
     public CommonResult<Void> add(@RequestBody @Validated SysUserDto dto) {
-        return CommonResult.success();
+        return userService.add(dto);
     }
 
     @PostMapping("/modify")
     public CommonResult<Void> modify(@RequestBody @Validated SysUserDto dto) {
-        return CommonResult.success();
+        return userService.modify(dto);
     }
 
     @PostMapping("/remove")
-    public CommonResult<Void> remove(@RequestBody @Validated Long[] ids){
-        return CommonResult.success();
+    public CommonResult<Void> remove(@RequestBody @Validated IdDto dto) {
+        return userService.remove(dto.getIds());
     }
 
     @PostMapping("/get")
-    public CommonResult<SysUserDto> findById(Long id){
-        return userService.findById(id);
+    public CommonResult<SysUserDto> get(@RequestBody @Validated IdDto dto) {
+        return userService.findById(dto.getId());
     }
 
     @PostMapping("/query")
-    public PageableResult<SysUserDto> findAll(@RequestBody @Validated QuerySysUserDto dto) {
+    public PageableResult<SysUserDto> query(@RequestBody @Validated QuerySysUserDto dto) {
         return userService.findAll(dto);
     }
 }
