@@ -2,7 +2,7 @@ create database `ssm-admin` character set 'utf8mb4' collate 'utf8mb4_0900_ai_ci'
 use `ssm-admin`;
 drop table if exists sys_user;
 create table sys_user (
-  user_id           bigint(20)      not null auto_increment    comment '用户ID',
+  id                bigint(20)      not null auto_increment    comment '用户ID',
   dept_id           bigint(20)      default null               comment '部门ID',
   login_name        varchar(30)     not null                   comment '登录账号',
   user_name         varchar(30)     default ''                 comment '用户昵称',
@@ -23,13 +23,13 @@ create table sys_user (
   update_by         varchar(64)     default ''                 comment '更新者',
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default null               comment '备注',
-  primary key (user_id)
-) engine=innodb auto_increment=100 comment = '用户信息表';
+  primary key (id)
+) engine=innodb auto_increment=1000 comment = '用户信息表';
 
 
 drop table if exists sys_role;
 create table sys_role (
-  role_id           bigint(20)      not null auto_increment    comment '角色ID',
+  id                bigint(20)      not null auto_increment    comment '角色ID',
   role_name         varchar(30)     not null                   comment '角色名称',
   role_key          varchar(100)    not null                   comment '角色权限字符串',
   role_sort         int(4)          not null                   comment '显示顺序',
@@ -41,13 +41,13 @@ create table sys_role (
   update_by         varchar(64)     default ''                 comment '更新者',
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default null               comment '备注',
-  primary key (role_id)
-) engine=innodb auto_increment=100 comment = '角色信息表';
+  primary key (id)
+) engine=innodb auto_increment=1000 comment = '角色信息表';
 
 
 drop table if exists sys_menu;
 create table sys_menu (
-  menu_id           bigint(20)      not null auto_increment    comment '菜单ID',
+  id                bigint(20)      not null auto_increment    comment '菜单ID',
   menu_name         varchar(50)     not null                   comment '菜单名称',
   parent_id         bigint(20)      default 0                  comment '父菜单ID',
   order_num         int(4)          default 0                  comment '显示顺序',
@@ -62,8 +62,8 @@ create table sys_menu (
   update_by         varchar(64)     default ''                 comment '更新者',
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default ''                 comment '备注',
-  primary key (menu_id)
-) engine=innodb auto_increment=2000 comment = '菜单权限表';
+  primary key (id)
+) engine=innodb auto_increment=1000 comment = '菜单权限表';
 
 
 drop table if exists sys_user_role;

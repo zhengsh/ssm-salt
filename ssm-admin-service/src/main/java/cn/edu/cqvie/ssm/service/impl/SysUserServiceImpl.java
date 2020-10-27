@@ -29,6 +29,7 @@ public class SysUserServiceImpl implements SysUserService {
     @Resource
     private SysUserDao userDao;
 
+    @Override
     @Transactional(rollbackFor = RuntimeException.class)
     public CommonResult<Void> add(SysUserDto userDto) {
         SysUser sysUser = new SysUser();
@@ -41,6 +42,7 @@ public class SysUserServiceImpl implements SysUserService {
         return CommonResult.success(null);
     }
 
+    @Override
     @Transactional(rollbackFor = RuntimeException.class)
     public CommonResult<Void> modify(SysUserDto userDto) {
         SysUser sysUser = new SysUser();
@@ -52,6 +54,7 @@ public class SysUserServiceImpl implements SysUserService {
         return CommonResult.success();
     }
 
+    @Override
     @Transactional(rollbackFor = RuntimeException.class)
     public CommonResult<Void> remove(Long[] ids) {
         int delete = userDao.delete(ids);
@@ -61,6 +64,7 @@ public class SysUserServiceImpl implements SysUserService {
         return CommonResult.success();
     }
 
+    @Override
     public CommonResult<SysUserDto> findById(Long id) {
         SysUser user = userDao.findById(id);
         SysUserDto userDto = new SysUserDto();
@@ -70,6 +74,7 @@ public class SysUserServiceImpl implements SysUserService {
         return CommonResult.success(userDto);
     }
 
+    @Override
     public PageableResult<SysUserDto> findAll(QuerySysUserDto dto) {
         PageHelper.startPage(dto.getIndex(), dto.getLimit());
         List<SysUser> userList = userDao.findAll(dto);
