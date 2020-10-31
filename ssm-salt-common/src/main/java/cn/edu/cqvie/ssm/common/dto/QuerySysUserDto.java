@@ -4,7 +4,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -16,19 +19,32 @@ import java.util.Date;
 @Getter
 @Setter
 public class QuerySysUserDto extends PageableDto {
-    private long id;
+    /**
+     * 数据库主键 id
+     */
+    private Long id;
 
-    private String username;
+    @Length(message = "500101", max = 20, min = 8)
+    @NotNull(message = "500100")
+    private String loginName;
 
-    private String password;
+    /**
+     * 用户昵称
+     */
+    private String userName;
 
-    private int age;
+    /**
+     * 用户类型（00系统用户 01注册用户）
+     */
+    private String userType;
 
-    private int sex;
+    /**
+     * 用户邮箱
+     */
+    private String email;
 
-    private String idCard;
-
-    private String address;
-
-    private Date birthday;
+    /**
+     * 手机号码
+     */
+    private String phoneNumber;
 }

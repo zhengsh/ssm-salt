@@ -13,38 +13,74 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CommonResult<T> {
-    private String code = "success";
 
-    private String message;
-
+    /**
+     * 错误码
+     */
+    private String code = "200000";
+    /**
+     * 消息提示
+     */
+    private String message = "操作成功";
+    /**
+     * 返回数据
+     */
     private T data;
 
-
+    /**
+     * 操作失败
+     *
+     * @return 返回公共结构
+     */
     public static CommonResult<Void> error() {
-        CommonResult<Void> result = new CommonResult<>();
-        result.code = "error";
-        result.message = "Operation error";
-        return result;
+        return error("500000", "失败");
     }
 
+    /**
+     * 操作失败
+     *
+     * @param message 消息内容
+     * @return 返回公共结构
+     */
     public static CommonResult<Void> error(String message) {
+        return error("500000", message);
+    }
+
+    /**
+     * 操作失败
+     *
+     * @param code    错误码
+     * @param message 消息内容
+     * @return 返回公共结构
+     */
+    public static CommonResult<Void> error(String code, String message) {
         CommonResult<Void> result = new CommonResult<>();
-        result.code = "error";
+        result.code = code;
         result.message = message;
         return result;
     }
 
+
+    /**
+     * 操作成功
+     *
+     * @return 返回公共结构
+     */
     public static CommonResult<Void> success() {
-        CommonResult<Void> result = new CommonResult<>();
-        result.message = "Operation succeeded";
-        return result;
+        return success(null);
     }
 
-
+    /**
+     * 操作成功
+     *
+     * @param data 结果数据对象
+     * @return 返回公共结构
+     */
     public static <T> CommonResult<T> success(T data) {
         CommonResult<T> result = new CommonResult<>();
         result.data = data;
-        result.message = "Operation succeeded";
         return result;
     }
+
+
 }

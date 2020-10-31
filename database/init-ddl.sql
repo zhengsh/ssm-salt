@@ -1,5 +1,5 @@
-create database `ssm-admin` character set 'utf8mb4' collate 'utf8mb4_0900_ai_ci';
-use `ssm-admin`;
+create database `ssm-salt` character set 'utf8mb4' collate 'utf8mb4_0900_ai_ci';
+use `ssm-salt`;
 drop table if exists sys_user;
 create table sys_user (
   id                bigint(20)      not null auto_increment    comment '用户ID',

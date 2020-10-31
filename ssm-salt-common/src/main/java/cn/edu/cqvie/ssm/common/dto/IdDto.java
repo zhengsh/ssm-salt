@@ -13,7 +13,13 @@ import lombok.Setter;
 @Setter
 public class IdDto {
 
+    /**
+     * 数据库主键 id
+     */
     private Long id;
 
+    /**
+     * 数据库主键 id 数组
+     */
     private Long[] ids;
 }

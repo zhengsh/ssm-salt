@@ -21,7 +21,7 @@ public interface SysUserDao {
      * @param entity 用户对象
      * @return 受影响的行数
      */
-    @Insert("INSERT INTO `sys_user`(`id`, `username`) VALUES (null, #{username})")
+    @Insert("INSERT INTO `sys_user`(`id`, `login_name`, `user_name`) VALUES (null, #{loginName}, #{userName})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     int insert(SysUser entity);
 
@@ -31,7 +31,7 @@ public interface SysUserDao {
      * @param entity 用户对象
      * @return 受影响的行数
      */
-    @Update("update sys_user set username=#{username} where id = #{id}")
+    @Update("update sys_user set login_name=#{loginName} where id = #{id}")
     int update(SysUser entity);
 
     /**
@@ -61,6 +61,6 @@ public interface SysUserDao {
      * @param dto 查询
      * @return 查询列表
      */
-    @Select("select * from sys_user where username like concat('%', #{username}, '%')")
+    @Select("select * from sys_user where login_name like concat('%', #{loginName}, '%')")
     List<SysUser> findAll(QuerySysUserDto dto);
 }

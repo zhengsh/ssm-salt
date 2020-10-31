@@ -1,6 +1,7 @@
 package cn.edu.cqvie.ssm.common.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -21,8 +22,7 @@ import lombok.Setter;
  * @author zhengsh
  * @date 2020-10-31
  */
-@Getter
-@Setter
+@Data
 public class SysUser implements Serializable {
     /**
      * 用户ID
@@ -97,12 +97,12 @@ public class SysUser implements Serializable {
     /**
      * 最后登录时间
      */
-    private Date loginDate;
+    private LocalDate loginDate;
 
     /**
      * 密码最后更新时间
      */
-    private Date pwdUpdateDate;
+    private LocalDate pwdUpdateDate;
 
     /**
      * 创建者
@@ -112,7 +112,7 @@ public class SysUser implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDate createTime;
 
     /**
      * 更新者
@@ -122,7 +122,7 @@ public class SysUser implements Serializable {
     /**
      * 更新时间
      */
-    private Date updateTime;
+    private LocalDate updateTime;
 
     /**
      * 备注

@@ -35,7 +35,7 @@ class SysUserServiceTest {
     void add() {
         SysUserDto sysUserDto = new SysUserDto();
         sysUserDto.setId(id);
-        sysUserDto.setUsername("zhangsan");
+        sysUserDto.setLoginName("TangTang");
         CommonResult<Void> result = userService.add(sysUserDto);
         id = sysUserDto.getId();
         log.info("add user:{}", sysUserDto);
@@ -51,7 +51,7 @@ class SysUserServiceTest {
     void modify() {
         SysUserDto sysUserDto = new SysUserDto();
         sysUserDto.setId(id);
-        sysUserDto.setUsername("zhangsan");
+        sysUserDto.setLoginName("Jack");
         CommonResult<Void> result = userService.modify(sysUserDto);
         log.info("modify user :{}", sysUserDto);
         log.info("modify result :{}", result);
@@ -78,7 +78,7 @@ class SysUserServiceTest {
     @Test
     void findAll() {
         QuerySysUserDto dto = new QuerySysUserDto();
-        dto.setUsername("z");
+        dto.setLoginName("Jack");
         PageableResult<SysUserDto> result = userService.query(dto);
         log.info("page result :{}", result);
     }

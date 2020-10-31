@@ -1,2 +1,2 @@
-INSERT INTO `sys_user`(`id`, `username`) VALUES (1, 'zhangsan');
-INSERT INTO `sys_user`(`id`, `username`) VALUES (2, 'zhangfei');
+INSERT INTO `sys_user`(`id`, `login_name`) VALUES (1, 'Tom');
+INSERT INTO `sys_user`(`id`, `login_name`) VALUES (2, 'Jack');

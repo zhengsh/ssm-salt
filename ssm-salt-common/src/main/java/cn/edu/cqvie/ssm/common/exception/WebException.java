@@ -1,6 +1,9 @@
 package cn.edu.cqvie.ssm.common.exception;
 
 import cn.edu.cqvie.ssm.common.result.CommonResult;
+import cn.edu.cqvie.ssm.common.service.MessageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -19,6 +22,9 @@ import java.util.List;
 @RestController
 @ControllerAdvice
 public class WebException {
+
+    @Autowired
+    private MessageService messageService;
 
     /**
      * 业务异常处理
@@ -46,7 +52,11 @@ public class WebException {
         String message = "";
         for (FieldError error : errors) {
             message = error.getDefaultMessage();
-            break;
+            message = messageService.getMessage(message);
+            if (message != null && !"".equals(message.trim())) {
+                return CommonResult.error();
+            }
+            return CommonResult.error();
         }
         return CommonResult.error(message);
     }
