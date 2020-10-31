@@ -1,6 +1,8 @@
 package cn.edu.cqvie.ssm.common.result;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -10,7 +12,8 @@ import java.util.List;
  * @author zhengsh
  * @date 2020-10-22
  */
-@Data
+@Getter
+@Setter
 public class PageableResult<T> {
 
     private String code = "success";

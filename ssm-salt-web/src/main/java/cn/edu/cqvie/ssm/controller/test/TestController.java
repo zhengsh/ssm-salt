@@ -1,10 +1,14 @@
 package cn.edu.cqvie.ssm.controller.test;
 
-import cn.edu.cqvie.ssm.common.dto.SysUserDto;
 import cn.edu.cqvie.ssm.common.result.CommonResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 测试代码
+ *
+ * @author zhengsh
+ * @date 2020-10-31
+ */
 @RestController
 @RequestMapping("/test")
 public class TestController {

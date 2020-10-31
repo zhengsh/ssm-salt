@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
+/**
+ * Bean 工具类
+ *
+ * @author zhengsh
+ * @date 202-10-31
+ */
 public class BeanUtils {
 
     /**

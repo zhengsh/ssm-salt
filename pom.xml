@@ -9,6 +9,8 @@
         <module>ssm-salt-service</module>
         <module>ssm-salt-web</module>
         <module>ssm-salt-starter</module>
+        <module>ssm-salt-cloud</module>
+        <module>ssm-salt-generator</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
@@ -53,6 +55,11 @@
             </dependency>
 
             <!-- user modules -->
+            <dependency>
+                <groupId>cn.edu.cqvie</groupId>
+                <artifactId>ssm-salt-cloud</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
                 <artifactId>ssm-salt-common</artifactId>

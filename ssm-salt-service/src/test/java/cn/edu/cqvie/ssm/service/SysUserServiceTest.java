@@ -1,6 +1,7 @@
 package cn.edu.cqvie.ssm.service;
 
 import cn.edu.cqvie.ssm.Application;
+import cn.edu.cqvie.ssm.common.dto.IdDto;
 import cn.edu.cqvie.ssm.common.dto.QuerySysUserDto;
 import cn.edu.cqvie.ssm.common.dto.SysUserDto;
 import cn.edu.cqvie.ssm.common.result.CommonResult;
@@ -25,6 +26,9 @@ class SysUserServiceTest {
 
     private static long id = 100;
 
+    /**
+     * 测试-系统用户管理新增
+     */
     @Order(1)
     @DisplayName("测试-系统用户管理新增")
     @Test
@@ -38,6 +42,9 @@ class SysUserServiceTest {
         log.info("add result:{}", result);
     }
 
+    /**
+     * 测试-系统用户管理ID修改
+     */
     @DisplayName("测试-系统用户管理ID修改")
     @Order(2)
     @Test
@@ -50,30 +57,42 @@ class SysUserServiceTest {
         log.info("modify result :{}", result);
     }
 
+    /**
+     * 测试-系统用户管理ID查询
+     */
     @DisplayName("测试-系统用户管理ID查询")
     @Order(3)
     @Test
     void findById() {
-        CommonResult<SysUserDto> result = userService.findById(id);
+        IdDto dto = new IdDto();
+        dto.setId(id);
+        CommonResult<SysUserDto> result = userService.get(dto);
         log.info("findById result :{}", result);
     }
 
-
+    /**
+     * 测试-系统用户管理查询
+     */
     @Order(4)
     @DisplayName("测试-系统用户管理查询")
     @Test
     void findAll() {
         QuerySysUserDto dto = new QuerySysUserDto();
         dto.setUsername("z");
-        PageableResult<SysUserDto> result = userService.findAll(dto);
+        PageableResult<SysUserDto> result = userService.query(dto);
         log.info("page result :{}", result);
     }
 
+    /**
+     * 测试-系统用户管理删除
+     */
     @DisplayName("测试-系统用户管理删除")
     @Order(5)
     @Test
     void remove() {
-        CommonResult<Void> result = userService.remove(new Long[]{id});
+        IdDto dto = new IdDto();
+        dto.setIds(new Long[]{id});
+        CommonResult<Void> result = userService.remove(dto);
         log.info("remove result :{}", result);
     }
 }

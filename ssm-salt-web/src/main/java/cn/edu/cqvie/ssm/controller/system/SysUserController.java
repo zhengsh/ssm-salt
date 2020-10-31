@@ -24,27 +24,27 @@ public class SysUserController {
     private SysUserService userService;
 
     @PostMapping("/add")
-    public CommonResult<Void> add(@RequestBody @Validated SysUserDto dto) {
+    public CommonResult<Void> add(@RequestBody SysUserDto dto) {
         return userService.add(dto);
     }
 
     @PostMapping("/modify")
-    public CommonResult<Void> modify(@RequestBody @Validated SysUserDto dto) {
+    public CommonResult<Void> modify(@RequestBody SysUserDto dto) {
         return userService.modify(dto);
     }
 
     @PostMapping("/remove")
-    public CommonResult<Void> remove(@RequestBody @Validated IdDto dto) {
-        return userService.remove(dto.getIds());
+    public CommonResult<Void> remove(@RequestBody IdDto dto) {
+        return userService.remove(dto);
     }
 
     @PostMapping("/get")
-    public CommonResult<SysUserDto> get(@RequestBody @Validated IdDto dto) {
-        return userService.findById(dto.getId());
+    public CommonResult<SysUserDto> get(@RequestBody IdDto dto) {
+        return userService.get(dto);
     }
 
     @PostMapping("/query")
-    public PageableResult<SysUserDto> query(@RequestBody @Validated QuerySysUserDto dto) {
-        return userService.findAll(dto);
+    public PageableResult<SysUserDto> query(@RequestBody QuerySysUserDto dto) {
+        return userService.query(dto);
     }
 }

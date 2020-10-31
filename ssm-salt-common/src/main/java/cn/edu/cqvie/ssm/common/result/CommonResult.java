@@ -1,6 +1,8 @@
 package cn.edu.cqvie.ssm.common.result;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 默认返回
@@ -8,7 +10,8 @@ import lombok.Data;
  * @author zhengsh
  * @date 2020-10-22
  */
-@Data
+@Getter
+@Setter
 public class CommonResult<T> {
     private String code = "success";
 

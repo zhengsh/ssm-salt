@@ -1,6 +1,7 @@
 package cn.edu.cqvie.ssm.common.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 分页入参基类
@@ -8,7 +9,8 @@ import lombok.Data;
  * @author zhengsh
  * @date 2020-10-22
  */
-@Data
+@Getter
+@Setter
 public class PageableDto {
     /**
      * 当前页

@@ -1,16 +1,14 @@
 package cn.edu.cqvie.ssm.common.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
  * 业务异常
  *
  * @author ZAKJ_ASUS
  */
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

@@ -11,7 +11,18 @@ import lombok.Data;
  *
  * @author zhengsh
  */
-@Data
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * 系统用户
+ *
+ * @author zhengsh
+ * @date 2020-10-31
+ */
+@Getter
+@Setter
 public class SysUser implements Serializable {
     /**
      * 用户ID

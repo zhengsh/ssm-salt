@@ -1,6 +1,7 @@
 package cn.edu.cqvie.ssm.common.dto;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NonNull;
 
 import javax.validation.constraints.NotNull;
@@ -12,7 +13,8 @@ import java.util.Date;
  * @author zhengsh
  * @date 2020-10-22
  */
-@Data
+@Getter
+@Setter
 public class SysUserDto {
 
     private long id;

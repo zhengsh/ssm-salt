@@ -1,6 +1,9 @@
 package cn.edu.cqvie.ssm.common.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -10,7 +13,8 @@ import java.util.Date;
  * @author zhengsh
  * @date 2020-10-22
  */
-@Data
+@Getter
+@Setter
 public class QuerySysUserDto extends PageableDto {
     private long id;
 

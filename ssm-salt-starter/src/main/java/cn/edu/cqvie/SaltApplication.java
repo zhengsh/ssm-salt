@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020-10-22
  */
 @SpringBootApplication
-public class AdminApplication {
+public class SaltApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AdminApplication.class,args);
+        SpringApplication.run(SaltApplication.class,args);
     }
 }

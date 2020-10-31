@@ -16,20 +16,29 @@ import java.util.List;
 public interface SysUserDao {
 
     /**
-     * @param user
+     * 新增用户信息
+     *
+     * @param entity 用户对象
+     * @return 受影响的行数
      */
     @Insert("INSERT INTO `sys_user`(`id`, `username`) VALUES (null, #{username})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
-    int insert(SysUser user);
+    int insert(SysUser entity);
 
     /**
-     * @param user
+     * 更新用户信息
+     *
+     * @param entity 用户对象
+     * @return 受影响的行数
      */
     @Update("update sys_user set username=#{username} where id = #{id}")
-    int update(SysUser user);
+    int update(SysUser entity);
 
     /**
-     * @param ids
+     * 通过 id 删除
+     *
+     * @param ids id 集合
+     * @return 受影响的行数
      */
     @Delete({"<script>",
             "delete from sys_user where id in",
@@ -38,12 +47,20 @@ public interface SysUserDao {
     int delete(Long[] ids);
 
     /**
-     * @param id
-     * @return
+     * 通过Id 查询
+     *
+     * @param id 唯一id
+     * @return 查询对象
      */
     @Select("select * from sys_user where id = #{id}")
     SysUser findById(Long id);
 
+    /**
+     * 查询
+     *
+     * @param dto 查询
+     * @return 查询列表
+     */
     @Select("select * from sys_user where username like concat('%', #{username}, '%')")
-    List<SysUser> findAll(QuerySysUserDto queryDto);
+    List<SysUser> findAll(QuerySysUserDto dto);
 }

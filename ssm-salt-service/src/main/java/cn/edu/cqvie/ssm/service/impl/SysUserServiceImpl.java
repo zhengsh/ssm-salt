@@ -1,5 +1,6 @@
 package cn.edu.cqvie.ssm.service.impl;
 
+import cn.edu.cqvie.ssm.common.dto.IdDto;
 import cn.edu.cqvie.ssm.common.dto.QuerySysUserDto;
 import cn.edu.cqvie.ssm.common.dto.SysUserDto;
 import cn.edu.cqvie.ssm.common.entity.SysUser;
@@ -13,6 +14,7 @@ import com.github.pagehelper.PageInfo;
 import cn.edu.cqvie.ssm.common.utils.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -31,22 +33,22 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     @Transactional(rollbackFor = RuntimeException.class)
-    public CommonResult<Void> add(SysUserDto userDto) {
+    public CommonResult<Void> add(@Validated SysUserDto dto) {
         SysUser sysUser = new SysUser();
-        BeanUtils.copyProperties(userDto, sysUser);
+        BeanUtils.copyProperties(dto, sysUser);
         int row = userDao.insert(sysUser);
         if (row < 1) {
             throw new ServiceException("sql insert error");
         }
-        userDto.setId(sysUser.getId());
+        dto.setId(sysUser.getId());
         return CommonResult.success(null);
     }
 
     @Override
     @Transactional(rollbackFor = RuntimeException.class)
-    public CommonResult<Void> modify(SysUserDto userDto) {
+    public CommonResult<Void> modify(@Validated SysUserDto dto) {
         SysUser sysUser = new SysUser();
-        BeanUtils.copyProperties(userDto, sysUser);
+        BeanUtils.copyProperties(dto, sysUser);
         int update = userDao.update(sysUser);
         if (update < 1) {
             throw new ServiceException("sql update error");
@@ -56,8 +58,8 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     @Transactional(rollbackFor = RuntimeException.class)
-    public CommonResult<Void> remove(Long[] ids) {
-        int delete = userDao.delete(ids);
+    public CommonResult<Void> remove(@Validated IdDto dto) {
+        int delete = userDao.delete(dto.getIds());
         if (delete < 1) {
             throw new ServiceException("sql delete error");
         }
@@ -65,8 +67,8 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public CommonResult<SysUserDto> findById(Long id) {
-        SysUser user = userDao.findById(id);
+    public CommonResult<SysUserDto> get(IdDto dto) {
+        SysUser user = userDao.findById(dto.getId());
         SysUserDto userDto = new SysUserDto();
         if (user != null) {
             BeanUtils.copyProperties(user, userDto);
@@ -75,7 +77,7 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public PageableResult<SysUserDto> findAll(QuerySysUserDto dto) {
+    public PageableResult<SysUserDto> query(@Validated QuerySysUserDto dto) {
         PageHelper.startPage(dto.getIndex(), dto.getLimit());
         List<SysUser> userList = userDao.findAll(dto);
         PageInfo<SysUser> p = new PageInfo<>(userList);
