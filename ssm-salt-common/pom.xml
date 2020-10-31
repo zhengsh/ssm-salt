@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.edu.cqvie</groupId>
-        <artifactId>ssm-admin</artifactId>
+        <artifactId>ssm-salt</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ssm-admin-common</artifactId>
+    <artifactId>ssm-salt-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>

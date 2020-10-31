@@ -3,18 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ssm-admin</artifactId>
+        <artifactId>ssm-salt</artifactId>
         <groupId>cn.edu.cqvie</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ssm-admin-service</artifactId>
+    <artifactId>ssm-salt-service</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>cn.edu.cqvie</groupId>
-            <artifactId>ssm-admin-dao</artifactId>
+            <artifactId>ssm-salt-dao</artifactId>
         </dependency>
 
         <dependency>

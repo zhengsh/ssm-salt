@@ -4,15 +4,15 @@
 
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>ssm-admin-common</module>
-        <module>ssm-admin-dao</module>
-        <module>ssm-admin-service</module>
-        <module>ssm-admin-web</module>
-        <module>ssm-admin-starter</module>
+        <module>ssm-salt-common</module>
+        <module>ssm-salt-dao</module>
+        <module>ssm-salt-service</module>
+        <module>ssm-salt-web</module>
+        <module>ssm-salt-starter</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
-    <artifactId>ssm-admin</artifactId>
+    <artifactId>ssm-salt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -55,22 +55,22 @@
             <!-- user modules -->
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-admin-common</artifactId>
+                <artifactId>ssm-salt-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-admin-dao</artifactId>
+                <artifactId>ssm-salt-dao</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-admin-service</artifactId>
+                <artifactId>ssm-salt-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-admin-web</artifactId>
+                <artifactId>ssm-salt-web</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
