@@ -7,21 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ssm-admin-common" />
-        <module name="ssm-admin-service" />
-        <module name="ssm-admin-web" />
-        <module name="ssm-admin-starter" />
-        <module name="ssm-admin-dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ssm-admin" target="11" />
       <module name="ssm-admin-common" target="11" />
       <module name="ssm-admin-dao" target="11" />
       <module name="ssm-admin-service" target="11" />
       <module name="ssm-admin-starter" target="11" />
       <module name="ssm-admin-web" target="11" />
       <module name="ssm-monkey-security" target="11" />
+      <module name="ssm-salt" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
