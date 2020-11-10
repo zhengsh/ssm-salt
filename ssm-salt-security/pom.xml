@@ -9,18 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.edu.cqvie.generator</groupId>
-    <artifactId>ssm-salt-generator</artifactId>
+    <groupId>cn.edu.cqvie.security</groupId>
+    <artifactId>ssm-salt-security</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>cn.edu.cqvie</groupId>
-            <artifactId>ssm-salt-common</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--
+        username: User
+        Using generated security password: 587fc06a-f6ab-49a1-9e5e-2c37ed9fe046
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
-
 </project>
