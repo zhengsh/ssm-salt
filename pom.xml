@@ -12,6 +12,7 @@
         <module>ssm-salt-cloud</module>
         <module>ssm-salt-generator</module>
         <module>ssm-salt-security</module>
+        <module>ssm-salt-ioc</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>

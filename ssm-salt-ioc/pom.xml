@@ -11,5 +11,11 @@
 
     <artifactId>ssm-salt-ioc</artifactId>
 
+    <properties>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+    </properties>
 
 </project>

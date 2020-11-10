@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef1090b2-a942-4fd4-991e-e6df694db61b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/IocApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/IocTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/annotation/Component.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/annotation/ComponentScan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/annotation/Lazy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/annotation/Scope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/bean/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm-salt-ioc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssm-salt-ioc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/IocApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/IocApplicationContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,6 @@
   <component name="ProjectId" id="1jLnBXQlnhQIIHSf1lglCaD3kB7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -99,12 +96,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/ssm-salt-web/src/test/java/cn/edu/cqvie/ssm" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.19921875" />
     <property name="project.structure.side.proportion" value="0.2464332" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
@@ -145,7 +143,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SecurityApplication">
+  <component name="RunManager" selected="Application.IocTest">
+    <configuration name="IocTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.cqvie.ioc.IocTest" />
+      <module name="ssm-salt-ioc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.cqvie.ioc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="ssm-salt" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -211,22 +222,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SysUserServiceTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ssm-salt-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.cqvie.ssm.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.cqvie.ssm.service" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.cqvie.ssm.service.SysUserServiceTest" />
-      <option name="METHOD_NAME" value="add" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SaltApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ssm-salt-starter" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.edu.cqvie.SaltApplication" />
@@ -249,11 +244,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IocTest" />
         <item itemvalue="Spring Boot.SecurityApplication" />
         <item itemvalue="JUnit.SysUserControllerTest.add" />
         <item itemvalue="JUnit.SysUserControllerTest" />
         <item itemvalue="JUnit.SysUserServiceTest" />
-        <item itemvalue="JUnit.SysUserServiceTest.add" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +307,7 @@
       <workItem from="1604451076617" duration="2597000" />
       <workItem from="1604535503212" duration="12793000" />
       <workItem from="1604624241998" duration="1181000" />
-      <workItem from="1604993545469" duration="2318000" />
+      <workItem from="1604993545469" duration="6517000" />
     </task>
     <task id="LOCAL-00001" summary="修改：依赖版本提取的根配置，和增加数据库创建语句">
       <created>1603784320878</created>
@@ -396,6 +391,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="575" y="224" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604127678828" />
+    <state x="872" y="108" key="#com.intellij.ide.util.MemberChooser" timestamp="1605000974774">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="872" y="108" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1605000974774" />
     <state x="497" y="210" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1603784048065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -435,45 +434,45 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="71" key="FileChooserDialogImpl/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604546775459" />
-    <state width="1158" height="294" key="GridCell.Tab.0.bottom" timestamp="1604568835311">
+    <state width="720" height="242" key="GridCell.Tab.0.bottom" timestamp="1604999220387">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835311" />
+    <state width="720" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220387" />
     <state width="1398" height="257" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1603597895799" />
-    <state width="1158" height="294" key="GridCell.Tab.0.center" timestamp="1604568835311">
+    <state width="720" height="242" key="GridCell.Tab.0.center" timestamp="1604999220386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835311" />
+    <state width="720" height="242" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220386" />
     <state width="1398" height="257" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1603597895798" />
-    <state width="1158" height="294" key="GridCell.Tab.0.left" timestamp="1604568835311">
+    <state width="720" height="242" key="GridCell.Tab.0.left" timestamp="1604999220385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835311" />
+    <state width="720" height="242" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220385" />
     <state width="1398" height="257" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1603597895798" />
-    <state width="1158" height="294" key="GridCell.Tab.0.right" timestamp="1604568835311">
+    <state width="720" height="242" key="GridCell.Tab.0.right" timestamp="1604999220386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835311" />
+    <state width="720" height="242" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220386" />
     <state width="1398" height="257" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1603597895799" />
-    <state width="1158" height="294" key="GridCell.Tab.1.bottom" timestamp="1604568835312">
+    <state width="720" height="242" key="GridCell.Tab.1.bottom" timestamp="1604999220389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835312" />
+    <state width="720" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220389" />
     <state width="1398" height="257" key="GridCell.Tab.1.bottom/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
-    <state width="1158" height="294" key="GridCell.Tab.1.center" timestamp="1604568835311">
+    <state width="720" height="242" key="GridCell.Tab.1.center" timestamp="1604999220388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835311" />
+    <state width="720" height="242" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220388" />
     <state width="1398" height="257" key="GridCell.Tab.1.center/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
-    <state width="1158" height="294" key="GridCell.Tab.1.left" timestamp="1604568835311">
+    <state width="720" height="242" key="GridCell.Tab.1.left" timestamp="1604999220388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835311" />
+    <state width="720" height="242" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220388" />
     <state width="1398" height="257" key="GridCell.Tab.1.left/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
-    <state width="1158" height="294" key="GridCell.Tab.1.right" timestamp="1604568835312">
+    <state width="720" height="242" key="GridCell.Tab.1.right" timestamp="1604999220389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1158" height="294" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604568835312" />
+    <state width="720" height="242" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604999220389" />
     <state width="1398" height="257" key="GridCell.Tab.1.right/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
     <state width="1158" height="294" key="GridCell.Tab.2.bottom" timestamp="1604568835312">
       <screen x="0" y="0" width="1536" height="824" />
@@ -503,19 +502,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="486" y="125" key="RollbackChangesDialog/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1603787112820" />
-    <state x="244" y="43" key="SettingsEditor" timestamp="1604997100605">
+    <state x="244" y="0" key="SettingsEditor" timestamp="1604998442873">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="244" y="43" key="SettingsEditor/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604997100605" />
+    <state x="244" y="0" key="SettingsEditor/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604998442873" />
     <state x="229" y="65" key="SettingsEditor/0.23.1440.806@0.23.1440.806" timestamp="1603592322867" />
     <state x="821" y="169" width="540" height="524" key="StructurePopup" timestamp="1604557808021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="821" y="169" width="540" height="524" key="StructurePopup/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604557808021" />
-    <state x="341" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604997252865">
+    <state x="341" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604998051891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604997252865" />
+    <state x="341" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604998051891" />
     <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.23.1440.806@0.23.1440.806" timestamp="1603598123985" />
     <state x="556" y="193" key="chooseDestDirectoryDialog" timestamp="1604131645202">
       <screen x="0" y="0" width="1536" height="824" />
@@ -539,6 +538,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="517" y="143" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604132816290" />
+    <state x="797" y="188" key="extract.method.dialog" timestamp="1605002457980">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="797" y="188" key="extract.method.dialog/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1605002457980" />
     <state x="385" y="150" width="843" height="551" key="find.popup" timestamp="1604131172046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -557,10 +560,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604126819912" />
-    <state x="411" y="133" width="715" height="692" key="search.everywhere.popup" timestamp="1604557792701">
+    <state x="411" y="133" width="715" height="692" key="search.everywhere.popup" timestamp="1604998791698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="411" y="133" width="715" height="692" key="search.everywhere.popup/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604557792701" />
+    <state x="411" y="133" width="715" height="692" key="search.everywhere.popup/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604998791698" />
     <state x="385" y="153" width="670" height="676" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1603596797316" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/IocApplicationContext.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
