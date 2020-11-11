@@ -59,13 +59,11 @@ public class AnnotationApplicationContext implements ApplicationContext {
         try {
             Object instance = beanClass.getDeclaredConstructor().newInstance();
 
+            //前置方法
             for (BeanPostProcessor bpp : beanPostProcessors) {
-                //前置方法
                 bpp.postProcessBeforeInitialization(instance, beanName);
-
-                //后置方法
-                bpp.postProcessAfterInitialization(instance, beanName);
             }
+
             //填充属性
             for (Field field : beanClass.getDeclaredFields()) {
                 if (field.isAnnotationPresent(Autowired.class)) {
@@ -85,6 +83,11 @@ public class AnnotationApplicationContext implements ApplicationContext {
             if (instance instanceof InitializingBean) {
                 InitializingBean initializingBean = (InitializingBean) instance;
                 initializingBean.afterPropertiesSet();
+            }
+
+            //后置方法
+            for (BeanPostProcessor bpp : beanPostProcessors) {
+                bpp.postProcessAfterInitialization(instance, beanName);
             }
             return instance;
         } catch (InstantiationException e) {
