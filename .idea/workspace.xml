@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef1090b2-a942-4fd4-991e-e6df694db61b" name="Default Changelist" comment="" />
+    <list default="true" id="ef1090b2-a942-4fd4-991e-e6df694db61b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ssm-salt-aop/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssm-salt-aop/src/main/java/cn/edu/cqvie/aop/AopTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssm-salt-aop/src/main/java/cn/edu/cqvie/aop/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/annotation/Scope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/IocApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/IocApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssm-salt-ioc/src/main/java/cn/edu/cqvie/ioc/service/UserService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -53,6 +63,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -67,24 +78,39 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.19921875" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ssm-admin-service/src/test/resources" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.edu.cqvie.ssm.service" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cqvie" />
-      <recent name="cn.edu.cqvie" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ssm-admin-starter/src/main/resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.edu.cqvie.ioc.service" />
+      <recent name="cn.edu.cqvie.ioc.annotation" />
+      <recent name="cqvie" />
+      <recent name="cn.edu.cqvie" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ssm-admin-service/src/test/resources" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.AdminApplication">
+  <component name="RunManager" selected="Application.IocTest">
+    <configuration name="IocTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.cqvie.ioc.IocTest" />
+      <module name="ssm-salt-ioc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.cqvie.ioc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="ssm-salt" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -140,13 +166,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SaltApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ssm-salt-starter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.edu.cqvie.SaltApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.IocTest" />
       <item itemvalue="JUnit.SysUserServiceTest.findAll" />
       <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.SaltApplication" />
       <item itemvalue="Spring Boot.AdminApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IocTest" />
         <item itemvalue="Spring Boot.AdminApplication" />
         <item itemvalue="JUnit.SysUserServiceTest.findAll" />
       </list>
@@ -168,16 +204,39 @@
       <workItem from="1603592800097" duration="1677000" />
       <workItem from="1603595227287" duration="1576000" />
       <workItem from="1603596812142" duration="1070000" />
+      <workItem from="1604932977132" duration="3515000" />
+      <workItem from="1605010048596" duration="4229000" />
+      <workItem from="1605098128784" duration="257000" />
     </task>
+    <task id="LOCAL-00001" summary="增加：自己实现 IOC 第一步">
+      <created>1604934579225</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604934579225</updated>
+    </task>
+    <task id="LOCAL-00002" summary="增加：自己实现 IOC 第一步">
+      <created>1604934601019</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604934601019</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="增加：自己实现 IOC 第一步" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加：自己实现 IOC 第一步" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="315" y="55" key="#Project_Structure" timestamp="1603597166845">
+    <state x="315" y="55" key="#Project_Structure" timestamp="1605010915775">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state x="315" y="55" key="#Project_Structure/0.23.1440.806/1440.23.1920.1057@0.23.1440.806" timestamp="1605010915775" />
     <state x="315" y="55" key="#Project_Structure/0.23.1440.806@0.23.1440.806" timestamp="1603597166845" />
     <state x="306" y="93" width="1134" height="673" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603596094060">
       <screen x="0" y="23" width="1440" height="806" />
@@ -195,42 +254,47 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="192" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.806@0.23.1440.806" timestamp="1603593143198" />
-    <state x="279" y="26" key="CommitChangelistDialog2" timestamp="1603597946020">
+    <state x="279" y="26" key="CommitChangelistDialog2" timestamp="1605098483739">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state x="279" y="26" key="CommitChangelistDialog2/0.23.1440.806@0.23.1440.806" timestamp="1603597946020" />
-    <state width="1398" height="257" key="GridCell.Tab.0.bottom" timestamp="1603597895799">
+    <state x="279" y="26" key="CommitChangelistDialog2/0.23.1440.806/1440.23.1920.1057@0.23.1440.806" timestamp="1605098483739" />
+    <state x="279" y="26" key="CommitChangelistDialog2/0.23.1440.806@0.23.1440.806" timestamp="1604934600664" />
+    <state x="94" y="92" key="DiffContextDialog" timestamp="1605098437867">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1603597895799" />
-    <state width="1398" height="257" key="GridCell.Tab.0.center" timestamp="1603597895798">
+    <state x="94" y="92" key="DiffContextDialog/0.23.1440.806/1440.23.1920.1057@0.23.1440.806" timestamp="1605098437867" />
+    <state width="1398" height="257" key="GridCell.Tab.0.bottom" timestamp="1604965497039">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1603597895798" />
-    <state width="1398" height="257" key="GridCell.Tab.0.left" timestamp="1603597895798">
+    <state width="1398" height="257" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1604965497039" />
+    <state width="1398" height="257" key="GridCell.Tab.0.center" timestamp="1604965497038">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1603597895798" />
-    <state width="1398" height="257" key="GridCell.Tab.0.right" timestamp="1603597895799">
+    <state width="1398" height="257" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1604965497038" />
+    <state width="1398" height="257" key="GridCell.Tab.0.left" timestamp="1604965497037">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1603597895799" />
-    <state width="1398" height="257" key="GridCell.Tab.1.bottom" timestamp="1603597895800">
+    <state width="1398" height="257" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1604965497037" />
+    <state width="1398" height="257" key="GridCell.Tab.0.right" timestamp="1604965497039">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.1.bottom/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
-    <state width="1398" height="257" key="GridCell.Tab.1.center" timestamp="1603597895800">
+    <state width="1398" height="257" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1604965497039" />
+    <state width="1398" height="257" key="GridCell.Tab.1.bottom" timestamp="1604965497042">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.1.center/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
-    <state width="1398" height="257" key="GridCell.Tab.1.left" timestamp="1603597895800">
+    <state width="1398" height="257" key="GridCell.Tab.1.bottom/0.23.1440.806@0.23.1440.806" timestamp="1604965497042" />
+    <state width="1398" height="257" key="GridCell.Tab.1.center" timestamp="1604965497041">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.1.left/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
-    <state width="1398" height="257" key="GridCell.Tab.1.right" timestamp="1603597895800">
+    <state width="1398" height="257" key="GridCell.Tab.1.center/0.23.1440.806@0.23.1440.806" timestamp="1604965497041" />
+    <state width="1398" height="257" key="GridCell.Tab.1.left" timestamp="1604965497040">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1398" height="257" key="GridCell.Tab.1.right/0.23.1440.806@0.23.1440.806" timestamp="1603597895800" />
+    <state width="1398" height="257" key="GridCell.Tab.1.left/0.23.1440.806@0.23.1440.806" timestamp="1604965497040" />
+    <state width="1398" height="257" key="GridCell.Tab.1.right" timestamp="1604965497041">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="257" key="GridCell.Tab.1.right/0.23.1440.806@0.23.1440.806" timestamp="1604965497041" />
     <state width="1398" height="257" key="GridCell.Tab.2.bottom" timestamp="1603597895801">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
@@ -247,14 +311,15 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state width="1398" height="257" key="GridCell.Tab.2.right/0.23.1440.806@0.23.1440.806" timestamp="1603597895801" />
-    <state x="229" y="65" key="SettingsEditor" timestamp="1603592322867">
+    <state x="229" y="65" key="SettingsEditor" timestamp="1605012414816">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state x="229" y="65" key="SettingsEditor/0.23.1440.806/1440.23.1920.1057@0.23.1440.806" timestamp="1605012414816" />
     <state x="229" y="65" key="SettingsEditor/0.23.1440.806@0.23.1440.806" timestamp="1603592322867" />
-    <state x="320" y="167" key="Vcs.Push.Dialog.v2" timestamp="1603598123985">
+    <state x="320" y="167" key="Vcs.Push.Dialog.v2" timestamp="1604934587749">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.23.1440.806@0.23.1440.806" timestamp="1603598123985" />
+    <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.23.1440.806@0.23.1440.806" timestamp="1604934587749" />
     <state x="521" y="212" key="chooseDestDirectoryDialog" timestamp="1603596254093">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
@@ -267,10 +332,11 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="363" y="168" width="790" height="538" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1603595320655" />
-    <state x="589" y="183" width="714" height="587" key="new project wizard" timestamp="1603592617034">
+    <state x="589" y="183" width="714" height="587" key="new project wizard" timestamp="1605010458635">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state x="589" y="183" width="714" height="587" key="new project wizard/0.23.1440.806@0.23.1440.806" timestamp="1603592617034" />
+    <state x="589" y="183" key="new project wizard/0.23.1440.806/1440.23.1920.1057@0.23.1440.806" timestamp="1605010458635" />
+    <state x="589" y="183" width="714" height="587" key="new project wizard/0.23.1440.806@0.23.1440.806" timestamp="1604933187974" />
     <state x="385" y="153" width="670" height="676" key="search.everywhere.popup" timestamp="1603596797316">
       <screen x="0" y="23" width="1440" height="806" />
     </state>

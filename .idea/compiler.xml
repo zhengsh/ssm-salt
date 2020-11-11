@@ -7,6 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ssm-salt-aop" />
+        <module name="ssm-salt-service" />
+        <module name="ssm-salt-web" />
+        <module name="ssm-salt-common" />
+        <module name="ssm-salt-ioc" />
+        <module name="ssm-salt-cloud" />
+        <module name="ssm-salt-generator" />
+        <module name="ssm-salt-starter" />
+        <module name="ssm-salt-dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +26,15 @@
       <module name="ssm-admin-web" target="11" />
       <module name="ssm-monkey-security" target="11" />
       <module name="ssm-salt" target="11" />
+      <module name="ssm-salt-aop" target="11" />
+      <module name="ssm-salt-cloud" target="11" />
+      <module name="ssm-salt-common" target="11" />
+      <module name="ssm-salt-dao" target="11" />
+      <module name="ssm-salt-generator" target="11" />
+      <module name="ssm-salt-ioc" target="11" />
+      <module name="ssm-salt-service" target="11" />
+      <module name="ssm-salt-starter" target="11" />
+      <module name="ssm-salt-web" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
