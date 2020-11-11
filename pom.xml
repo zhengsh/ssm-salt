@@ -11,6 +11,7 @@
         <module>ssm-salt-starter</module>
         <module>ssm-salt-cloud</module>
         <module>ssm-salt-generator</module>
+        <module>ssm-salt-security</module>
         <module>ssm-salt-ioc</module>
         <module>ssm-salt-aop</module>
     </modules>
@@ -88,6 +89,12 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>2.3.5.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>

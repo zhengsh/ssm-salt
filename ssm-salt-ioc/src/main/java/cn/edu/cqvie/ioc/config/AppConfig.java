@@ -8,7 +8,7 @@ import cn.edu.cqvie.ioc.annotation.ComponentScan;
  * @author zhengsh
  * @date 2020-11-091
  */
-@ComponentScan("cn.edu.cqvie.ioc.service")
+@ComponentScan({"cn.edu.cqvie.ioc.service", "cn.edu.cqvie.ioc.processor"})
 public class AppConfig {
 
 }

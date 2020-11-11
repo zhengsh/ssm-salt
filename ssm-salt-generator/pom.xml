@@ -12,5 +12,15 @@
     <groupId>cn.edu.cqvie.generator</groupId>
     <artifactId>ssm-salt-generator</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.edu.cqvie</groupId>
+            <artifactId>ssm-salt-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

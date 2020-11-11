@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020-10-22
  */
 @SpringBootApplication
-public class SaltApplication {
+public class SecurityApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SaltApplication.class,args);
+        SpringApplication.run(SecurityApplication.class,args);
     }
 }
