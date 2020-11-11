@@ -1,12 +1,11 @@
 package cn.edu.cqvie.ioc;
 
-import cn.edu.cqvie.ioc.annotation.Component;
-import cn.edu.cqvie.ioc.annotation.ComponentScan;
-import cn.edu.cqvie.ioc.annotation.Lazy;
-import cn.edu.cqvie.ioc.annotation.Scope;
+import cn.edu.cqvie.ioc.annotation.*;
 import cn.edu.cqvie.ioc.bean.BeanDefinition;
 
 import java.io.File;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,13 +46,35 @@ public class IocApplicationContext {
         for (String beanName : beanDefinitionMap.keySet()) {
             BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
             if ("singleton".equals(beanDefinition.getScope()) && !beanDefinition.isLazy()) {
-                Object bean = createBean();
+                Object bean = createBean(beanDefinition);
                 singletonObjects.put(beanName, bean);
             }
         }
     }
 
-    private Object createBean() {
+    private Object createBean(BeanDefinition beanDefinition) {
+        Class beanClass = beanDefinition.getBeanClass();
+        try {
+            Object instance = beanClass.getDeclaredConstructor().newInstance();
+            //填充属性
+            for (Field field : beanClass.getDeclaredFields()) {
+                if (field.isAnnotationPresent(Autowired.class)) {
+                    //byType, byName
+                    Object bean = getBean(field.getName());
+                    field.setAccessible(true);
+                    field.set(instance, bean);
+                }
+            }
+            return instance;
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -82,7 +103,9 @@ public class IocApplicationContext {
                         Component component = (Component) clazz.getAnnotation(Component.class);
                         String beanName = component.value();
                         if ("".equals(beanName)) {
-                            beanName = file.getName().substring(0, s.indexOf(".class"));
+                            beanName = f.getName();
+                            beanName = beanName.substring(0, beanName.indexOf(".class"));
+                            beanName = beanName.substring(0, 1).toLowerCase() + beanName.substring(1);
                         }
 
                         BeanDefinition beanDefinition = new BeanDefinition();
@@ -119,15 +142,20 @@ public class IocApplicationContext {
      * @return
      */
     public Object getBean(String beanName) {
-        if (beanDefinitionMap.containsKey(beanName)) {
+        if (!beanDefinitionMap.containsKey(beanName)) {
             throw new NullPointerException();
         } else {
             BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
             if ("singleton".equals(beanDefinition.getScope())) {
                 //单例池
-                return singletonObjects.get(beanName);
+                Object bean = singletonObjects.get(beanName);
+                if (bean == null) {
+                    bean = createBean(beanDefinition);
+                    singletonObjects.put(beanName, bean);
+                }
+                return bean;
             } else if ("prototype".equals(beanDefinition.getScope())) {
-                return createBean();
+                return createBean(beanDefinitionMap.get(beanName));
             }
         }
         return null;
