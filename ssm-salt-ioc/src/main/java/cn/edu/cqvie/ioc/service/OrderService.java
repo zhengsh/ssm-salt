@@ -4,6 +4,7 @@ import cn.edu.cqvie.ioc.annotation.Autowired;
 import cn.edu.cqvie.ioc.annotation.Component;
 import cn.edu.cqvie.ioc.aware.BeanNameAware;
 import cn.edu.cqvie.ioc.bean.InitializingBean;
+import cn.edu.cqvie.ioc.service.UserService;
 
 /**
  * 订单业务

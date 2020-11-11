@@ -1,7 +1,6 @@
-package cn.edu.cqvie.ioc.service;
+package cn.edu.cqvie.ioc.processor;
 
 import cn.edu.cqvie.ioc.annotation.Component;
-import cn.edu.cqvie.ioc.processor.BeanPostProcessor;
 
 /**
  * bean 的后置处理器
