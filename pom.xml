@@ -13,6 +13,7 @@
         <module>ssm-salt-generator</module>
         <module>ssm-salt-security</module>
         <module>ssm-salt-ioc</module>
+        <module>ssm-salt-reactor</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
