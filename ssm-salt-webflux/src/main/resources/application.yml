@@ -1,0 +1,10 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/ssm?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root123
+    pool:
+      enabled: true
+      max-size: 10
+      initial-size: 10
+      validation-query: select 1
