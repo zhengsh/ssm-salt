@@ -30,10 +30,8 @@ public class UserController {
      * @return
      */
     @GetMapping(path = "/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ServerResponse> getUser(@PathVariable("id") Long id) {
-        return ServerResponse.ok()
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(userService.findById(id), User.class);
+    public Mono<User> getUser(@PathVariable("id") Long id) {
+        return userService.findById(id);
     }
 
     /**
@@ -44,19 +42,17 @@ public class UserController {
      * @return 修改后的信息
      */
     @PutMapping("/user/{id}")
-    public Mono<ServerResponse> update(@PathVariable("id") Long id, @RequestBody User user) {
+    public Mono<User> update(@PathVariable("id") Long id, @RequestBody User user) {
         return this.userService.findById(id)
-                .flatMap(u -> {
+                .map(u -> {
                     u.setBirthday(user.getBirthday());
                     u.setName(user.getName());
                     //性别只能首次设置，设置后不可修改
                     if (u.getSex() == null) {
                         u.setSex(user.getSex());
                     }
-                    return this.userService.save(u);
-                })
-                .then(ServerResponse.ok().build())
-                .switchIfEmpty(ServerResponse.notFound().build());
+                    return u;
+                }).flatMap(this.userService::save);
 
     }
 
@@ -67,13 +63,9 @@ public class UserController {
      * @return 删除后的结果
      */
     @DeleteMapping("/user/{id}")
-    public Mono<ServerResponse> delete(@PathVariable("id") Long id) {
-        return this.userService.findById(id)
-                .flatMap(i -> this.userService.deleteById(id))
-                .then(ServerResponse.ok().build())
-                .switchIfEmpty(ServerResponse.notFound().build());
+    public Mono<Void> delete(@PathVariable("id") Long id) {
+        return this.userService.deleteById(id);
     }
-
 
     /**
      * 保存用户信息
@@ -82,9 +74,7 @@ public class UserController {
      * @return 用户信息
      */
     @PostMapping("/user")
-    public Mono<ServerResponse> save(@RequestBody User user) {
-        return ServerResponse.ok()
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(userService.save(user), User.class);
+    public Mono<User> save(@RequestBody User user) {
+        return userService.save(user);
     }
 }
