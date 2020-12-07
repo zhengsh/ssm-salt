@@ -30,10 +30,10 @@ public class UserController {
      * @return
      */
     @GetMapping(path = "/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(code = HttpStatus.OK)
     public Mono<ServerResponse> getUser(@PathVariable("id") Long id) {
-        return Mono.justOrEmpty(ServerResponse.class)
-                .flatMap(p -> ServerResponse.ok().bodyValue(userService.findById(id)));
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(userService.findById(id), User.class);
     }
 
     /**
@@ -45,19 +45,19 @@ public class UserController {
      */
     @PutMapping("/user/{id}")
     public Mono<ServerResponse> update(@PathVariable("id") Long id, @RequestBody User user) {
-        return Mono.justOrEmpty(ServerResponse.class).flatMap(
-                p -> ServerResponse.ok()
-                        .bodyValue(this.userService.findById(id)
-                                .map(u -> {
-                                    u.setBirthday(user.getBirthday());
-                                    u.setName(user.getName());
-                                    //性别只能首次设置，设置后不可修改
-                                    if (u.getSex() == null) {
-                                        u.setSex(user.getSex());
-                                    }
-                                    return u;
-                                })
-                                .flatMap(u -> save(u))));
+        return this.userService.findById(id)
+                .flatMap(u -> {
+                    u.setBirthday(user.getBirthday());
+                    u.setName(user.getName());
+                    //性别只能首次设置，设置后不可修改
+                    if (u.getSex() == null) {
+                        u.setSex(user.getSex());
+                    }
+                    return this.userService.save(u);
+                })
+                .then(ServerResponse.ok().build())
+                .switchIfEmpty(ServerResponse.notFound().build());
+
     }
 
     /**
@@ -68,9 +68,10 @@ public class UserController {
      */
     @DeleteMapping("/user/{id}")
     public Mono<ServerResponse> delete(@PathVariable("id") Long id) {
-        return Mono.justOrEmpty(ServerResponse.class).flatMap(
-                p -> ServerResponse.ok()
-                        .bodyValue(userService.deleteById(id)));
+        return this.userService.findById(id)
+                .flatMap(i -> this.userService.deleteById(id))
+                .then(ServerResponse.ok().build())
+                .switchIfEmpty(ServerResponse.notFound().build());
     }
 
 
@@ -82,8 +83,8 @@ public class UserController {
      */
     @PostMapping("/user")
     public Mono<ServerResponse> save(@RequestBody User user) {
-        return Mono.justOrEmpty(ServerResponse.class).flatMap(
-                p -> ServerResponse.ok()
-                        .bodyValue(userService.save(user)));
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(userService.save(user), User.class);
     }
 }
