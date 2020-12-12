@@ -16,6 +16,7 @@
         <module>ssm-salt-reactor</module>
         <module>ssm-salt-aop</module>
         <module>ssm-salt-webflux</module>
+        <module>ssm-salt-jvm</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
