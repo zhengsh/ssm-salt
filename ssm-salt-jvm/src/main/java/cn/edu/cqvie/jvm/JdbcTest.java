@@ -8,17 +8,17 @@ import java.sql.*;
  */
 public class JdbcTest {
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        Class.forName("net.sf.log4jdbc.DriverSpy");
         Connection con = DriverManager.getConnection(
-                "jdbc:mysql://127.0.0.1:3306/easy-code?useSSL=false&characterEncoding=UTF-8&useUnicode=true&serverTimezone=Asia/Shanghai"
-                , "root", "zhh359#");
+                "jdbc:log4jdbc:mysql://127.0.0.1:3306/ssm", "root", "root123");
         PreparedStatement pds = con.prepareStatement("select 1");
         ResultSet rs = pds.executeQuery();
         while (rs.next()) {
             String result = rs.getString(1);
             System.out.println("rs: " + result);
         }
+        rs.close();
         con.close();
     }
 }
