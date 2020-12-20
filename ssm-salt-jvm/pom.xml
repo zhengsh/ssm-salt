@@ -11,5 +11,15 @@
 
     <artifactId>ssm-salt-jvm</artifactId>
 
+    <properties>
+        <mysql-connector.version>8.0.22</mysql-connector.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+        </dependency>
+    </dependencies>
 </project>
