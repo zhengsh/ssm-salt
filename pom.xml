@@ -17,6 +17,8 @@
         <module>ssm-salt-aop</module>
         <module>ssm-salt-webflux</module>
         <module>ssm-salt-jvm</module>
+        <module>ssm-salt-datasource</module>
+        <module>ssm-salt-core</module>
         <module>ssm-salt-leetcode</module>
     </modules>
 
