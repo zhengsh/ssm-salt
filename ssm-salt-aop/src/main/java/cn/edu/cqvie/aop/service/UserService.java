@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
  * @author zhengsh
  * @date 2020-11-10
  */
-@Mark
 public interface UserService {
 
-    public void test();
+    void test();
 }

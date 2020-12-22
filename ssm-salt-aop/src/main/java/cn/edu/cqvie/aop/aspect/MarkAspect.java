@@ -21,17 +21,21 @@ public class MarkAspect {
     }
 
     @Before("doPointCut()")
-    public void before(JoinPoint joinPoint) throws ClassNotFoundException {
-        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-        Method method = signature.getMethod();
-        Mark mark = method.getAnnotation(Mark.class);
-        if (mark == null) {
-            String targetName = joinPoint.getTarget().getClass().getName();
-            Class targetClass = Class.forName(targetName);
-            Annotation annotation = targetClass.getAnnotation(Mark.class);
-            mark = (Mark) annotation;
+    public void before(JoinPoint joinPoint) {
+        try {
+            Class<?> clazz = joinPoint.getTarget().getClass();
+            String methodName = joinPoint.getSignature().getName();
+            Method method = clazz.getMethod(methodName);
+            Mark mark = method.getAnnotation(Mark.class);
+            if (mark == null) {
+                String targetName = clazz.getSimpleName();
+                Class<?> targetClass = Class.forName(targetName);
+                mark = targetClass.getAnnotation(Mark.class);
+            }
+            System.out.println("注解式拦截: " + mark.value());
+        } catch (Throwable t) {
+            t.printStackTrace();
         }
-        System.out.println("注解式拦截 " + mark.value());
     }
 
 }

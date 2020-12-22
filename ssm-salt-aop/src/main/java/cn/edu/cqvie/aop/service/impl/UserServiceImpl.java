@@ -10,10 +10,11 @@ import org.springframework.stereotype.Service;
  * @author zhengsh
  * @date 2020-11-10
  */
-@Mark("user-mark")
+//@Mark("user-mark")
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Mark("user-mark-test")
     public void test() {
         System.out.println("test invoke!");
     }
