@@ -6,9 +6,7 @@ package cn.edu.cqvie.aop.service;
  * @author zhengsh
  * @date 2020-11-10
  */
-public class UserService {
+public interface UserService {
 
-    public void test() {
-        System.out.println("test");
-    }
+    void test();
 }
