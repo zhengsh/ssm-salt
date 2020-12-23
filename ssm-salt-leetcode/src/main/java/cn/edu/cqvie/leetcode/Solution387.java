@@ -1,5 +1,10 @@
 package cn.edu.cqvie.leetcode;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
 public class Solution387 {
 
 //    387. 字符串中的第一个唯一字符
@@ -23,17 +28,27 @@ public class Solution387 {
     }
 
     public int firstUniqChar(String s) {
-        char c;
+        //上次重复出现的字符
+        char[] arrays = new char[s.length()];
         for (int i = 0; i < s.length(); i++) {
-            c = s.charAt(i);
-            boolean b = false;
-            for (int j = i + 1; j < s.length(); j++) {
-                if (c == s.charAt(j)) {
-                    b = true;
+            //当前字符
+            char c1 = s.charAt(i);
+            boolean b = true;
+            for (char a : arrays) {
+                if (c1 == a) {
+                    b = false;
                     break;
                 }
             }
-            if (!b) {
+            //已经出现过
+            for (int j = i + 1; j < s.length() && b; j++) {
+                if (c1 == s.charAt(j)) {
+                    arrays[i] = c1;
+                    b = false;
+                    break;
+                }
+            }
+            if (b) {
                 return i;
             }
         }
