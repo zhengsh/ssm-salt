@@ -58,6 +58,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //设置哪些路径可以直接访问，不需要认证
                 .and().authorizeRequests()
                 .antMatchers("/user/login", "/login.html")
+                //hasRole 需要指定 "ROLE_**"
+                .hasAnyRole("").antMatchers().hasRole("").antMatchers()
+                .denyAll().antMatchers()
+                //匹配 ip 地址
+                .hasIpAddress("").antMatchers()
                 .permitAll()
                 .anyRequest()
                 .authenticated() //需要认证
