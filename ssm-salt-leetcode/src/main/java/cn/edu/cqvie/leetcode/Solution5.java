@@ -25,14 +25,40 @@ public class Solution5 {
 
     // 回文数
     public String longestPalindrome(String s) {
-        if (s.length() < 3) {
-            return "";
+        if (s == null || s.length() <= 1) {
+            return s;
         }
-        String s1 = s.substring(0, 2), s2;
-        for (int i = 2; i < s.length(); i++) {
-            //回文数判断
-            //s1 += s.charAt(i) + "";
+
+        // 保存起始位置
+        int[] range = new int[2];
+        char[] arr = s.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            // 把回文看成中间的部分全是同一字符，左右部分相对称
+            // 找到下一个与当前字符不同的字符
+            i = findLongest(arr, i, range);
         }
-        return s1;
+        return s.substring(range[0], range[1] + 1);
+    }
+
+    private int findLongest(char[] arr, int low, int[] range) {
+        // 查找中间部分
+        int high = low;
+        while (high < arr.length - 1 && arr[high + 1] == arr[low]) {
+            high++;
+        }
+        // 定位中间的一个字符
+        int ans = high;
+        // 中间向两边边拓散
+        while (low > 0 && high < arr.length - 1 && arr[low - 1] == arr[high + 1]) {
+            low--;
+            high++;
+        }
+
+        // 记录最大长度
+        if (high - low > range[1] - range[0]) {
+            range[0] = low;
+            range[1] = high;
+        }
+        return ans;
     }
 }
