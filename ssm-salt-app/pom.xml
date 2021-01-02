@@ -9,7 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ssm-salt-core</artifactId>
-
-
+    <artifactId>ssm-salt-api</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ssm-salt-common</module>
+        <module>ssm-salt-dao</module>
+        <module>ssm-salt-service</module>
+        <module>ssm-salt-web</module>
+        <module>ssm-salt-starter</module>
+        <module>ssm-salt-reactor</module>
+        <module>ssm-salt-webflux</module>
+        <module>ssm-salt-security</module>
+    </modules>
 </project>

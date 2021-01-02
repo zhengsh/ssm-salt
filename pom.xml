@@ -4,23 +4,16 @@
 
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>ssm-salt-common</module>
-        <module>ssm-salt-dao</module>
-        <module>ssm-salt-service</module>
-        <module>ssm-salt-web</module>
-        <module>ssm-salt-starter</module>
         <module>ssm-salt-cloud</module>
         <module>ssm-salt-generator</module>
-        <module>ssm-salt-security</module>
-        <module>ssm-salt-ioc</module>
-        <module>ssm-salt-reactor</module>
-        <module>ssm-salt-aop</module>
-        <module>ssm-salt-webflux</module>
         <module>ssm-salt-jvm</module>
         <module>ssm-salt-datasource</module>
-        <module>ssm-salt-core</module>
         <module>ssm-salt-leetcode</module>
-        <module>ssm-salt-order</module>
+        <module>ssm-salt-sdk</module>
+        <module>ssm-salt-feature</module>
+        <module>ssm-salt-api</module>
+        <module>ssm-salt-jdk</module>
+        <module>ssm-salt-boot</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
