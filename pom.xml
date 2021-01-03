@@ -11,7 +11,7 @@
         <module>ssm-salt-leetcode</module>
         <module>ssm-salt-sdk</module>
         <module>ssm-salt-feature</module>
-        <module>ssm-salt-api</module>
+        <module>ssm-salt-app</module>
         <module>ssm-salt-jdk</module>
         <module>ssm-salt-boot</module>
     </modules>

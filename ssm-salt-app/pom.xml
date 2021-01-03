@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ssm-salt-api</artifactId>
+    <artifactId>ssm-salt-app</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>ssm-salt-common</module>
