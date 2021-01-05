@@ -15,5 +15,8 @@
     <modules>
         <module>ssm-salt-ioc</module>
         <module>ssm-salt-aop</module>
+        <module>ssm-salt-lock</module>
     </modules>
+
+
 </project>
