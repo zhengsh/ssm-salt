@@ -13,6 +13,7 @@
         <module>ssm-salt-feature</module>
         <module>ssm-salt-app</module>
         <module>ssm-salt-boot</module>
+        <module>ssm-salt-jdk</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
