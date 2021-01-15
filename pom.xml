@@ -3,7 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+
     <modules>
+        <!--
         <module>ssm-salt-cloud</module>
         <module>ssm-salt-generator</module>
         <module>ssm-salt-jvm</module>
@@ -14,6 +16,9 @@
         <module>ssm-salt-app</module>
         <module>ssm-salt-boot</module>
         <module>ssm-salt-jdk</module>
+        -->
+
+        <module>ssm-salt-netty</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
@@ -37,6 +42,7 @@
         <javax.el.version>3.0.0</javax.el.version>
         <hibernate-validator.version>6.1.6.Final</hibernate-validator.version>
         <fastjson.version>1.2.74</fastjson.version>
+        <ssm-salt.version>0.0.1-SNAPSHOT</ssm-salt.version>
     </properties>
 
     <dependencyManagement>
@@ -59,31 +65,33 @@
             </dependency>
 
             <!-- user modules -->
+            <!--
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
                 <artifactId>ssm-salt-cloud</artifactId>
-                <version>${project.version}</version>
+                <version>${ssm-salt.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
                 <artifactId>ssm-salt-common</artifactId>
-                <version>${project.version}</version>
+                <version>${ssm-salt.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
                 <artifactId>ssm-salt-dao</artifactId>
-                <version>${project.version}</version>
+                <version>${ssm-salt.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
                 <artifactId>ssm-salt-service</artifactId>
-                <version>${project.version}</version>
+                <version>${ssm-salt.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.edu.cqvie</groupId>
                 <artifactId>ssm-salt-web</artifactId>
-                <version>${project.version}</version>
+                <version>${ssm-salt.version}</version>
             </dependency>
+            -->
 
             <!-- spring-boot, spring-cloud and spring more module -->
             <dependency>

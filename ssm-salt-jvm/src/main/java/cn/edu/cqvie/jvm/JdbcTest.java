@@ -32,7 +32,7 @@ public class JdbcTest {
             idsMenus.addAll(childNodes);
             exec(String.join(",", childNodes));
         } else {
-            pds.execute("delete sys_menu from id in ("+  +")");
+            pds.execute("delete sys_menu from id in ("+ 1 +")");
         }
         rs.close();
         con.close();
