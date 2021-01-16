@@ -19,6 +19,8 @@
         -->
 
         <module>ssm-salt-netty</module>
+        <module>ssm-salt-spring</module>
+        <module>ssm-salt-spring-mvc</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
