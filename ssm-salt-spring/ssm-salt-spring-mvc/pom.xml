@@ -10,6 +10,10 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
+    <description>
+        Tomcat7.x, Spring MVC 4.3.10 基于 XML 配置的简单 Web 案例
+    </description>
+
     <properties>
         <spring.version>4.3.10.RELEASE</spring.version>
         <tomcat.version>7.0.47</tomcat.version>
