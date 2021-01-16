@@ -1,23 +1,20 @@
 package cn.edu.cqvie.juc;
 
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.CountDownLatch;
 
-/**
- * 信号量（在共享锁中使用）
- * <p>
- * 场景：模拟售票的场景
- */
-public class SemaphoreTest {
-
+public class CountDownLatchTest {
     public static void main(String[] args) {
-        Semaphore semaphore = new Semaphore(3);
-        //semaphore.
+        CountDownLatch countDownLatch = new CountDownLatch(3);
         for (int i = 0; i < 5; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        semaphore.acquire();
+                        // 减1
+                        countDownLatch.countDown();
+                        System.out.println(Thread.currentThread().getName() + " count = " + countDownLatch.getCount());
+                        // 阻塞 count = 0
+                        countDownLatch.await();
                         // 占用
                         System.out.println(Thread.currentThread().getName() + ": 开始买票");
 
@@ -27,10 +24,10 @@ public class SemaphoreTest {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {
-                        semaphore.release();
                     }
                 }
             }).start();
         }
+
     }
 }

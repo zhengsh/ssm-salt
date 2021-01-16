@@ -34,7 +34,9 @@ public class ReentrantLockTest {
     public static void main(String[] args) {
         T t1 = new T("线程1");
         T t2 = new T("线程2");
+        T t3 = new T("线程3");
         t1.start();
         t2.start();
+        t3.start();
     }
 }
