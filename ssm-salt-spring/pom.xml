@@ -13,5 +13,7 @@
 
     <artifactId>ssm-salt-spring</artifactId>
 
-
+    <modules>
+        <module>ssm-salt-spring-mvc</module>
+    </modules>
 </project>
