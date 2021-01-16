@@ -7,6 +7,8 @@ import java.net.Socket;
 
 /**
  * BIO
+ *
+ * @author zhengsh
  */
 public class BioSocketServer {
 
@@ -19,7 +21,6 @@ public class BioSocketServer {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("有客户端连接了。。。。。");
                 handler(clientSocket);
-
 
                 new Thread(new Runnable() {
                     @Override

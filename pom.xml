@@ -16,9 +16,9 @@
         <module>ssm-salt-app</module>
         <module>ssm-salt-boot</module>
         <module>ssm-salt-jdk</module>
-        -->
-
         <module>ssm-salt-netty</module>
+
+        -->
         <module>ssm-salt-spring</module>
     </modules>
 

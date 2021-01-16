@@ -23,32 +23,6 @@ public class NioSocketServer {
         serverSocket.configureBlocking(false);
         System.out.println("服务启动成功");
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    // 遍历连接进行数据读取
-                    Iterator<SocketChannel> iterator = channelList.iterator();
-                    while (iterator.hasNext()) {
-                        SocketChannel sc = iterator.next();
-                        ByteBuffer byteBuffer = ByteBuffer.allocate(128);
-                        // 非阻塞模式 read 不会阻塞，否则会金额如阻塞
-                        int len = 0;
-                        try {
-                            len = sc.read(byteBuffer);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        if (len > 0) {
-                            System.out.println("接收到消息：" + new String(byteBuffer.array()));
-                        }
-                        iterator.remove();
-                        System.out.println("客户端断开连接");
-                    }
-                }
-            }
-        }).start();
-
         while (true) {
             // 非阻塞模式 accept 方法不会阻塞，默认会阻塞
             // NIO 的非阻塞是由操作系统内部实现的，底层调用了 linux 内核的 accept 函数。
@@ -60,8 +34,24 @@ public class NioSocketServer {
                 // 保存客户端连接在 List 中
                 channelList.add(socketChannel);
             }
-            if (channelList == null) {
-                break;
+
+            // 遍历连接进行数据读取
+            Iterator<SocketChannel> iterator = channelList.iterator();
+            while (iterator.hasNext()) {
+                SocketChannel sc = iterator.next();
+                ByteBuffer byteBuffer = ByteBuffer.allocate(128);
+                // 非阻塞模式 read 不会阻塞，否则会金额如阻塞
+                int len = 0;
+                try {
+                    len = sc.read(byteBuffer);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (len > 0) {
+                    System.out.println("接收到消息：" + new String(byteBuffer.array()));
+                }
+                iterator.remove();
+                System.out.println("客户端断开连接");
             }
         }
 
