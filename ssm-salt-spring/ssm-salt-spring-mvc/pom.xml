@@ -44,6 +44,12 @@
             <version>1.2.60</version>
         </dependency>
 
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+
         <!-- javaee -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -92,9 +98,9 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <!-- 通过maven tomcat8:run运行项目时，访问项目的端口号 -->
+                    <!-- 通过maven tomcat7:run运行项目时，访问项目的端口号 -->
                     <port>9090</port>
-                    <path>/test</path>
+                    <path>/</path>
                 </configuration>
             </plugin>
             <plugin>
