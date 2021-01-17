@@ -8,7 +8,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-public class NettyClient {
+public class ChatClient {
     public static void main(String[] args) throws Exception {
         //客户端需要一个事件循环组
         EventLoopGroup group = new NioEventLoopGroup();
@@ -23,7 +23,7 @@ public class NettyClient {
                         @Override
                         protected void initChannel(SocketChannel channel) throws Exception {
                             //加入处理器
-                            channel.pipeline().addLast(new NettyClientHandler());
+                            channel.pipeline().addLast(new ChatClientHandler());
                         }
                     });
             System.out.println("netty client start");

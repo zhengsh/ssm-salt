@@ -9,7 +9,7 @@ import io.netty.util.CharsetUtil;
 /**
  * 自定义Handler需要继承netty规定好的某个HandlerAdapter(规范)
  */
-public class NettyServerHandler extends ChannelInboundHandlerAdapter {
+public class ChatServerHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 读取客户端发送的数据

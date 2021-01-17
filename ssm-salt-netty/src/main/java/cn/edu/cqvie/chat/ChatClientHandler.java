@@ -6,7 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 
-public class NettyClientHandler extends ChannelInboundHandlerAdapter {
+public class ChatClientHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 当客户端连接服务器完成就会触发该方法
