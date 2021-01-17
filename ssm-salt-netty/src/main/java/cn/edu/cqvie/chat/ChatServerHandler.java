@@ -1,54 +1,58 @@
 package cn.edu.cqvie.chat;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.util.CharsetUtil;
+import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.channel.group.ChannelGroup;
+import io.netty.channel.group.DefaultChannelGroup;
+import io.netty.util.concurrent.GlobalEventExecutor;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 自定义Handler需要继承netty规定好的某个HandlerAdapter(规范)
  */
-public class ChatServerHandler extends ChannelInboundHandlerAdapter {
+public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
 
-    /**
-     * 读取客户端发送的数据
-     *
-     * @param ctx 上下文对象, 含有通道channel，管道pipeline
-     * @param msg 就是客户端发送的数据
-     * @throws Exception
-     */
+    // GlobalEventExecutor.INSTANCE 是一个全局的时间执行器是一个单例
+    private static ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    // 表示 Channel 处于就绪状态，提示上线
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("服务器读取线程 " + Thread.currentThread().getName());
-        //Channel channel = ctx.channel();
-        //ChannelPipeline pipeline = ctx.pipeline(); //本质是一个双向链接, 出站入站
-        //将 msg 转成一个 ByteBuf，类似NIO 的 ByteBuffer
-        ByteBuf buf = (ByteBuf) msg;
-        System.out.println("客户端发送消息是:" + buf.toString(CharsetUtil.UTF_8));
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        Channel channel = ctx.channel();
+        // 将该客户加入聊天的信息推送给其它的在线客户端
+        // 该方法将 channelGroup 中所有的 channel 遍历，并且发送消息
+        channelGroup.writeAndFlush("[客户端]" + channel.remoteAddress() + " 上线了 " + sdf.format(new Date()) + "\n");
+        // 将当前 channel 加入到 channelGroup 中
+        channelGroup.add(channel);
+        System.out.println(channel.remoteAddress() + " 上线了");
     }
 
-    /**
-     * 数据读取完毕处理方法
-     *
-     * @param ctx
-     * @throws Exception
-     */
     @Override
-    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-        ByteBuf buf = Unpooled.copiedBuffer("HelloClient", CharsetUtil.UTF_8);
-        ctx.writeAndFlush(buf);
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        Channel channel = ctx.channel();
+        // 将当前 channel 从 channelGroup 中移除
+        channelGroup.remove(channel);
+        // 将该客户离开聊天的信息推送给其它的在线客户端
+        // 该方法将 channelGroup 中所有的 channel 遍历，并且发送消息
+        channelGroup.writeAndFlush("[客户端]" + channel.remoteAddress() + " 下线了 " + sdf.format(new Date()) + "\n");
+        System.out.println(channel.remoteAddress() + " 下线了");
     }
 
-    /**
-     * 处理异常, 一般是需要关闭通道
-     *
-     * @param ctx
-     * @param cause
-     * @throws Exception
-     */
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        ctx.close();
+    protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
+        Channel channel = ctx.channel();
+        channelGroup.forEach(ch -> {
+            if (ch.id() != channel.id()) {
+                ch.writeAndFlush("[客户端]" + channel.remoteAddress() + ": " + sdf.format(new Date()) + "\n" +
+                        msg + "\n");
+            } else {
+                ch.writeAndFlush(" [自己]：" + msg + "\n");
+            }
+        });
     }
+
 }

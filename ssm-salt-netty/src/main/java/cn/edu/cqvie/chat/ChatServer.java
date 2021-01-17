@@ -1,13 +1,15 @@
 package cn.edu.cqvie.chat;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.DelimiterBasedFrameDecoder;
+import io.netty.handler.codec.Delimiters;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
+import io.netty.util.CharsetUtil;
 
 public class ChatServer {
 
@@ -30,8 +32,13 @@ public class ChatServer {
 
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
+                            ChannelPipeline pipeline = ch.pipeline();
+                            pipeline.addLast(new DelimiterBasedFrameDecoder(4096, Delimiters.lineDelimiter()));
+                            pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
+                            pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
+
                             //对workerGroup的SocketChannel设置处理器
-                            ch.pipeline().addLast(new ChatServerHandler());
+                            pipeline.addLast(new ChatServerHandler());
                         }
                     });
             System.out.println("netty server start。。");
@@ -39,7 +46,7 @@ public class ChatServer {
             //启动服务器(并绑定端口)，bind是异步操作，sync方法是等待异步操作执行完毕
             ChannelFuture cf = bootstrap.bind(9000).sync();
             //给cf注册监听器，监听我们关心的事件
-            /*cf.addListener(new ChannelFutureListener() {
+            cf.addListener(new ChannelFutureListener() {
                 @Override
                 public void operationComplete(ChannelFuture future) throws Exception {
                     if (cf.isSuccess()) {
@@ -48,7 +55,7 @@ public class ChatServer {
                         System.out.println("监听端口9000失败");
                     }
                 }
-            });*/
+            });
             //对通道关闭进行监听，closeFuture是异步操作，监听通道关闭
             // 通过sync方法同步等待通道关闭处理完毕，这里会阻塞等待通道关闭完成
             cf.channel().closeFuture().sync();
