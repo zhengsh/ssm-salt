@@ -25,8 +25,6 @@
 
     <!-- 静态资源不走controller -->
     <mvc:resources mapping="/resources/**" location="/static/"/>
-    <!-- or  <mvc:default-servlet-handler/> 与上面mvc:resources标签选其一即可,这里如果配置，必须配置 <mvc:annotation-driven/> 其他 controller 才可正常工作 -->
-
 
     <!-- 配置消息转换器支持接受 application/json;charset=UTF-8 格式请求 -->
     <mvc:annotation-driven>
