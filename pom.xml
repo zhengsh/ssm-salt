@@ -19,6 +19,7 @@
         <module>ssm-salt-jdk</module>
         <module>ssm-salt-netty</module>
         <module>ssm-salt-spring</module>
+        <module>ssm-salt-redis</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
