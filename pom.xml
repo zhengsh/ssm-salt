@@ -16,10 +16,12 @@
         <module>ssm-salt-app</module>
         <module>ssm-salt-boot</module>
         -->
+        <module>ssm-salt-jvm</module>
         <module>ssm-salt-jdk</module>
         <module>ssm-salt-netty</module>
         <module>ssm-salt-spring</module>
         <module>ssm-salt-redis</module>
+        <module>ssm-salt-jedis</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
@@ -135,6 +137,7 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!-- mybatis and database driver -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -186,6 +189,11 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Maven MILESTONE Repository</name>
+            <url>https://repo.spring.io/libs-milestone</url>
         </repository>
     </repositories>
 

@@ -3,7 +3,7 @@ spring:
   profiles:
     active: dev
   #数据源
-  datasource:
+  redis:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
