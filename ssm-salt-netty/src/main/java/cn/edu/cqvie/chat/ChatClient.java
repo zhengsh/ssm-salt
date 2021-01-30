@@ -28,8 +28,11 @@ public class ChatClient {
                         @Override
                         protected void initChannel(SocketChannel channel) throws Exception {
                             ChannelPipeline pipeline = channel.pipeline();
+                            // 加入特殊分符号进行分割
                             pipeline.addLast(new DelimiterBasedFrameDecoder(4096, Delimiters.lineDelimiter()));
+                            // 编码器
                             pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
+                            // 解码器
                             pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
                             //加入处理器
                             pipeline.addLast(new ChatClientHandler());

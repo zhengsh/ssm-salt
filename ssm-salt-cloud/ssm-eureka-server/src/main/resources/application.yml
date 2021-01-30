@@ -1,0 +1,13 @@
+server:
+  port: 3000
+eureka:
+  server:
+    enable-self-preservation: false # 关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 # 设置间隔（单位：毫秒）
+  instance:
+    hostname: eureka3000
+  client:
+    register-with-eureka: false # 不把自己作为一个客户端注册到自己
+    fetch-registry: false # 不需要从服务端获取注册信息
+    service-url:
+      default-zone: http://127.0.0.1:3000/eureka

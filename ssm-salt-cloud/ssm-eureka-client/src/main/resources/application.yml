@@ -1,0 +1,17 @@
+server:
+  port: 6000
+
+eureka:
+  client:
+    serviceUrl:
+      # 这里要注意是小驼峰如果填写为中划线, 会导致配置失效
+      defaultZone: http://127.0.0.1:3000/eureka # eureka 服务端提供的注册地址
+  instance:
+    instance-id: client-0 # 此实例注册到 eureka 服务端的唯一实例
+    prefer-ip-address: true # 是否显示 ip 地址
+    lease-renewal-interval-in-seconds:  10 # eureka 客户端需要多长时间发送 eureka 服务心跳到服务端
+    lease-expiration-duration-in-seconds: 30 # eureka 服务端在接受到实例的最后一次发出的心跳的时间
+
+spring:
+  application:
+    name: servcie-client

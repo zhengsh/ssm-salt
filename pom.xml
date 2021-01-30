@@ -13,15 +13,18 @@
         <module>ssm-salt-leetcode</module>
         <module>ssm-salt-sdk</module>
         <module>ssm-salt-feature</module>
-        <module>ssm-salt-app</module>
         <module>ssm-salt-boot</module>
-        -->
         <module>ssm-salt-jvm</module>
         <module>ssm-salt-jdk</module>
         <module>ssm-salt-netty</module>
         <module>ssm-salt-spring</module>
         <module>ssm-salt-redis</module>
         <module>ssm-salt-jedis</module>
+        <module>ssm-salt-app</module>
+        -->
+
+        <module>ssm-salt-dubbo</module>
+        <module>ssm-salt-cloud</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
@@ -34,8 +37,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <encoding>UTF-8</encoding>
-        <spring-boot.version>2.4.0-SNAPSHOT</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-boot.version>2.4.2</spring-boot.version>
+        <spring-cloud.version>2020.0.1</spring-cloud.version>
         <lombok.version>1.18.16</lombok.version>
 
         <mysql-connector.version>8.0.22</mysql-connector.version>
@@ -50,7 +53,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--spring boot 2.4.0-SNAPSHOT-->
+            <!--spring boot 2.4.2 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -58,11 +61,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--spring cloud Hoxton.SR8-->
+            <!--spring cloud 2020.0.1 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR8</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

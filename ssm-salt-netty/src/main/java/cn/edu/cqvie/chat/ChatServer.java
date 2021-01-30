@@ -22,7 +22,7 @@ public class ChatServer {
         try {
             //创建服务器端的启动对象
             ServerBootstrap bootstrap = new ServerBootstrap();
-            //使用链式编程来配置参数
+            //使用链式编程来配置参数上几次这么主动，你
             bootstrap.group(bossGroup, workerGroup) //设置两个线程组
                     .channel(NioServerSocketChannel.class) //使用NioServerSocketChannel作为服务器的通道实现
                     // 初始化服务器连接队列大小，服务端处理客户端连接请求是顺序处理的,所以同一时间只能处理一个客户端连接。
@@ -34,7 +34,9 @@ public class ChatServer {
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();
                             pipeline.addLast(new DelimiterBasedFrameDecoder(4096, Delimiters.lineDelimiter()));
+                            // 编码器解码器
                             pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
+                            // 编码器
                             pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
 
                             //对workerGroup的SocketChannel设置处理器

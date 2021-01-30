@@ -2,7 +2,6 @@ package cn.edu.cqvie.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -31,7 +30,19 @@ public class NioSelectorSocketServer {
         System.out.println("服务启动成功");
 
         while (true) {
-            // 阻塞等待需要处理的事件发生<<<重要代码>>>
+
+            /**
+             * 通常是阻塞的，但是在epoll空轮询的bug中，
+             * 之前处于连接状态突然被断开，select()的
+             * 返回值noOfKeys应该等于0，也就是阻塞状态
+             * 但是，在此bug中，select()被唤醒，而又
+             * 没有数据传入，导致while (itr.hasNext())
+             * 根本不会执行，而后就进入for (;;) {的死循环
+             * 但是，正常状态下应该阻塞，也就是只输出一个waiting...
+             * 而此时进入死循环，不断的输出waiting...，程序死循环
+             * cpu自然很快飙升到100%状态。
+             */
+             // 阻塞等待需要处理的事件发生<<<重要代码>>>
             selector.select();
 
             // 获取 Selector 中注册全部事件的 SelectionKey 实例
