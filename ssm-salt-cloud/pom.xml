@@ -12,6 +12,9 @@
     <modules>
         <module>ssm-eureka-server</module>
         <module>ssm-eureka-client</module>
+        <module>ssm-service-payment</module>
+        <module>ssm-service-member</module>
+        <module>ssm-service-gateway</module>
     </modules>
 
     <artifactId>ssm-salt-cloud</artifactId>

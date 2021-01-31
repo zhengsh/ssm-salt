@@ -1,0 +1,48 @@
+server:
+  port: 4001
+
+eureka:
+  client:
+    serviceUrl:
+      # 这里要注意是小驼峰如果填写为中划线, 会导致配置失效
+      defaultZone: http://127.0.0.1:3000/eureka/
+  instance:
+    instance-id: ${spring.application.name}-01
+    prefer-ip-address: true #是否显示IP地址
+    leaseRenewalIntervalInSeconds: 10 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
+    leaseExpirationDurationInSeconds: 30 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+
+
+spring:
+  application:
+    name: servcie-gateway
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      # 路由配置
+      routes:
+        # member 服务
+        - id: member
+          uri: lb://SERVICE-MEMBER
+          # 路由断言对符合条件的接口断言
+          predicates:
+            - Path=/member/**
+          filters:
+            # 熔断器
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/fallbackfallback
+            # 令牌桶
+            - name: RequestRateLimiter
+              KeyResolver: userKeyResolver
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                redis-rate-limiter.requestedTokens: 1

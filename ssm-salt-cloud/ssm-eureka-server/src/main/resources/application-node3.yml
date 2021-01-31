@@ -1,5 +1,5 @@
 server:
-  port: 3000
+  port: 3003
 eureka:
   server:
     enable-self-preservation: false # 关闭自我保护机制
@@ -9,19 +9,5 @@ eureka:
   client:
     register-with-eureka: false # 不把自己作为一个客户端注册到自己
     fetch-registry: false # 不需要从服务端获取注册信息
-    serviceUrl:
-      defaultZone: http://127.0.0.1:3000/eureka
-
-#spring.profiles.active=dev
-logging:
-  level:
-    root: info
-    com.netflix.eureka: debug
-# 说明 eureka 集群模式 node1, node2, node3
-
-# 暴露监控端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+    service-url:
+      default-zone: http://eureka3001.com:3001/eureka,http://eureka3001.com:3002/eureka,http://eureka3001.com:3003/eureka
