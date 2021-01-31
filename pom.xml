@@ -5,15 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <modules>
-        <!--
         <module>ssm-salt-cloud</module>
-        <module>ssm-salt-generator</module>
         <module>ssm-salt-jvm</module>
-        <module>ssm-salt-datasource</module>
         <module>ssm-salt-leetcode</module>
         <module>ssm-salt-sdk</module>
-        <module>ssm-salt-feature</module>
-        <module>ssm-salt-boot</module>
         <module>ssm-salt-jvm</module>
         <module>ssm-salt-jdk</module>
         <module>ssm-salt-netty</module>
@@ -21,10 +16,8 @@
         <module>ssm-salt-redis</module>
         <module>ssm-salt-jedis</module>
         <module>ssm-salt-app</module>
-        -->
-
-        <module>ssm-salt-dubbo</module>
         <module>ssm-salt-cloud</module>
+        <module>ssm-salt-dubbo</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>
@@ -69,35 +62,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <!-- user modules -->
-            <!--
-            <dependency>
-                <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-salt-cloud</artifactId>
-                <version>${ssm-salt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-salt-common</artifactId>
-                <version>${ssm-salt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-salt-dao</artifactId>
-                <version>${ssm-salt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-salt-service</artifactId>
-                <version>${ssm-salt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.edu.cqvie</groupId>
-                <artifactId>ssm-salt-web</artifactId>
-                <version>${ssm-salt.version}</version>
-            </dependency>
-            -->
 
             <!-- spring-boot, spring-cloud and spring more module -->
             <dependency>

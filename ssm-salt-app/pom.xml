@@ -22,4 +22,35 @@
         <module>ssm-salt-security</module>
         <module>ssm-salt-shiro</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- user modules -->
+            <dependency>
+                <groupId>cn.edu.cqvie</groupId>
+                <artifactId>ssm-salt-cloud</artifactId>
+                <version>${ssm-salt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.edu.cqvie</groupId>
+                <artifactId>ssm-salt-common</artifactId>
+                <version>${ssm-salt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.edu.cqvie</groupId>
+                <artifactId>ssm-salt-dao</artifactId>
+                <version>${ssm-salt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.edu.cqvie</groupId>
+                <artifactId>ssm-salt-service</artifactId>
+                <version>${ssm-salt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.edu.cqvie</groupId>
+                <artifactId>ssm-salt-web</artifactId>
+                <version>${ssm-salt.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
