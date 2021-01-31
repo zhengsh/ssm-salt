@@ -38,7 +38,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: myCircuitBreaker
-                fallbackUri: forward:/fallbackfallback
+                fallbackUri: forward:/fallback
             # 令牌桶
             - name: RequestRateLimiter
               KeyResolver: userKeyResolver
