@@ -26,7 +26,7 @@ public class SpiTest {
         ExtensionLoader<Person> extensionLoader2 = ExtensionLoader
                 .getExtensionLoader(Person.class);
         Person person = extensionLoader2.getExtension("black");
-        URL url = new URL("x", "localhost",8080);
+        URL url = new URL("x", "localhost", 8080); //代理逻辑
         url = url.addParameter("car", "red");
         person.getCar().color(url);
     }

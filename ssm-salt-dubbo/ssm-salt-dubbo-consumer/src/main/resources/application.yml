@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: ssm-salt-dubbo-consumer

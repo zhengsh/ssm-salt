@@ -13,4 +13,11 @@ public class RedCar implements Car {
     public String color(URL url) {
         return "red";
     }
+
+//    @Override
+//    public String sayHello() {
+//        return "say hello!";
+//    }
+
+
 }

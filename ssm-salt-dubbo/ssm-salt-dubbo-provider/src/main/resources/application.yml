@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ssm-salt-dubbo-provider
+dubbo:
+  scan:
+    base-packages: cn.edu.cqvie.provider.service
+  protocol:
+    name: dubbo
+    port: 12345
+  registry:
+    address: N/A
