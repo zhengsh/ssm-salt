@@ -2,7 +2,10 @@ spring:
   application:
     name: ssm-salt-dubbo-provider
 dubbo:
+  application:
+    name: ${spring.application.name}
   scan:
+    # 扫描 dubbo服务所在的包
     base-packages: cn.edu.cqvie.provider.service
   protocol:
     name: dubbo

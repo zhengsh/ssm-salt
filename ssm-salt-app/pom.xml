@@ -17,10 +17,13 @@
         <module>ssm-salt-service</module>
         <module>ssm-salt-web</module>
         <module>ssm-salt-starter</module>
+
+        <!--
         <module>ssm-salt-reactor</module>
         <module>ssm-salt-webflux</module>
         <module>ssm-salt-security</module>
         <module>ssm-salt-shiro</module>
+        -->
     </modules>
 
 
