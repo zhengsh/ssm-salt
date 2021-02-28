@@ -11,6 +11,13 @@
 
     <artifactId>ssm-salt-starter</artifactId>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>cn.edu.cqvie</groupId>

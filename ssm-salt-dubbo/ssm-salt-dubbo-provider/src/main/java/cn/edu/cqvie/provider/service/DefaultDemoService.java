@@ -12,6 +12,8 @@ public class DefaultDemoService implements DemoService {
      */
     @Value("${dubbo.application.name}")
     private String serviceName;
+    StringBuffer aa;
+    StringBuilder bb;
 
     public String sayHello(String name) {
         return String.format("[%s] : Hello, %s", serviceName, name);

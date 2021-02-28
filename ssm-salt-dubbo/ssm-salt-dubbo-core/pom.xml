@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ssm-salt-cloud-core</artifactId>
+    <artifactId>ssm-salt-dubbo-core</artifactId>
     <description>todo dubbo 自定义实现</description>
 
 </project>

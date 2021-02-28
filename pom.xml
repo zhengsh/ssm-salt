@@ -17,9 +17,9 @@
         <module>ssm-salt-jedis</module>
         <module>ssm-salt-cloud</module>
 
-        <module>ssm-salt-dubbo</module>
         -->
 
+        <module>ssm-salt-dubbo</module>
         <module>ssm-salt-app</module>
         <module>ssm-salt-jvm</module>
 
