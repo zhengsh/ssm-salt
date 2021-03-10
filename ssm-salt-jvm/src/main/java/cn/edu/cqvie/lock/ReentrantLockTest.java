@@ -14,8 +14,15 @@ public class ReentrantLockTest {
         ReentrantLockTest test = new ReentrantLockTest();
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             executorService.submit(test::serviceMethod);
+        }
+        executorService.shutdown();
+        while (true) {
+            if (executorService.isTerminated()) {
+                break;
+            }
+
         }
     }
 
@@ -27,7 +34,7 @@ public class ReentrantLockTest {
 
     private static void doSomething() {
         try {
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(20);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

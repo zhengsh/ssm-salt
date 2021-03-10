@@ -8,21 +8,23 @@
         <!--
         <module>ssm-salt-cloud</module>
         <module>ssm-salt-jvm</module>
-        <module>ssm-salt-leetcode</module>
         <module>ssm-salt-sdk</module>
         <module>ssm-salt-jdk</module>
-        <module>ssm-salt-netty</module>
         <module>ssm-salt-spring</module>
         <module>ssm-salt-redis</module>
         <module>ssm-salt-jedis</module>
         <module>ssm-salt-cloud</module>
 
-        -->
+
 
         <module>ssm-salt-dubbo</module>
-        <module>ssm-salt-app</module>
-        <module>ssm-salt-jvm</module>
+        -->
 
+        <module>ssm-salt-app</module>
+        <module>ssm-salt-leetcode</module>
+        <module>ssm-salt-netty</module>
+        <module>ssm-salt-jvm</module>
+        <module>ssm-salt-middleware</module>
     </modules>
 
     <groupId>cn.edu.cqvie</groupId>

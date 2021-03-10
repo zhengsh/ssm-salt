@@ -1,6 +1,6 @@
 package cn.edu.cqvie.jvm;
 
-public class Math {
+public class MathTest {
 
     public int compute() {
         int a = 1026;

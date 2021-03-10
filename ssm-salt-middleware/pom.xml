@@ -8,21 +8,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>ssm-salt-netty</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.35.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-transport</artifactId>
-            <version>4.1.35.Final</version>
-        </dependency>
-    </dependencies>
+    <packaging>pom</packaging>
+    <artifactId>ssm-salt-middleware</artifactId>
 
 
 </project>
